@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import kotlinx.datetime.format
+import top.iedu.iattendance.extension.beautifullyFormat
 import top.iedu.iattendance.model.AttendanceRecord
 
 @Composable
@@ -23,13 +24,13 @@ fun RecordItem(record: AttendanceRecord) {
                 Row {
                     Text(record.name.ifBlank { record.template.name })
                 }
-                Text("创建于 ...")
-                Text("修改于 ...")
+                Text("创建于 ${record.createTime.beautifullyFormat()}")
+                Text("修改于 ${record.editTime.beautifullyFormat()}")
             }
             Column {
-                Text("应到 ... 人")
-                Text("实到 ... 人")
-                Text("请假 ... 人")
+                Text("应到 ${record.peopleNeedAttendanceAmount()} 人")
+                Text("实到 ${record.peopleActuallyAttendedAmount()} 人")
+                Text("请假 ${record.peopleActuallyLeavedAmount()} 人")
             }
         }
     }
