@@ -1,0 +1,7 @@
+TEAM_ID=
+
+PRODUCT_NAME=ImmersingAttendance
+PRODUCT_BUNDLE_IDENTIFIER=top.iedu.iattendance.ImmersingAttendance$(TEAM_ID)
+
+CURRENT_PROJECT_VERSION=1
+MARKETING_VERSION=1.0
